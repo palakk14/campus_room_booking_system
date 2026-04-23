@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Book Room {{ room_id }}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-4">
+  <div class="col-md-7">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <h1 class="heading mb-1">Book Room {{ room_id }}</h1>
+        <p class="subtext">Choose a date, time and purpose for your booking.</p>
+      </div>
+      <a href="/rooms" class="btn btn-ghost">Back to Rooms</a>
+    </div>
+
+    <div class="card-ui p-4">
+      <form method="POST" class="row g-3">
+        <div class="col-12">
+          <label class="form-label text-muted">Date</label>
+          <input type="date" name="date" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label text-muted">Start Time</label>
+          <input type="time" name="start_time" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label text-muted">End Time</label>
+          <input type="time" name="end_time" class="form-control" required>
+        </div>
+        <div class="col-12">
+          <label class="form-label text-muted">Purpose</label>
+          <input type="text" name="purpose" class="form-control" placeholder="Purpose" required>
+        </div>
+        <div class="col-12 d-grid">
+          <button type="submit" class="btn btn-main">Confirm Booking</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

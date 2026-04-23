@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Rooms{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-4">
+  <div>
+    <h1 class="heading page-title">Available Rooms</h1>
+    <p class="subtext">Filter and book the best space for your event.</p>
+  </div>
+  
+</div>
+
+<div class="card-ui p-4 mb-4">
+  <form method="GET" class="row g-3 align-items-end">
+    <div class="col-md-4">
+      <label class="form-label text-muted">Search</label>
+      <input type="text" name="search" class="form-control" placeholder="Search room name">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label text-muted">Type</label>
+      <select name="type" class="form-select">
+        <option value="">All Types</option>
+        <option>Classroom</option>
+        <option>Hall</option>
+        <option>Computer Lab</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label class="form-label text-muted">Min Capacity</label>
+      <input type="number" name="capacity" class="form-control" placeholder="Min Capacity">
+    </div>
+    <div class="col-md-2 d-grid">
+      <button class="btn btn-main">Filter</button>
+    </div>
+  </form>
+</div>
+
+<div class="card-ui p-3 overflow-auto">
+  <table class="table-theme">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Capacity</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for room in rooms %}
+      <tr>
+        <td>{{ room.room_name }}</td>
+        <td>{{ room.capacity }}</td>
+        <td>{{ room.type }}</td>
+        <td>{{ room.status }}</td>
+        <td>
+          <a href="/book/{{ room.room_id }}" class="btn btn-main btn-sm">Book</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
