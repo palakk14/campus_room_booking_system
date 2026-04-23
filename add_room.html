@@ -1,0 +1,40 @@
+{% extends "admin_base.html" %}
+
+{% block title %}Add Room{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-4">
+  <div class="col-md-6">
+    <div class="mb-3">
+      <h1 class="heading mb-1">Add Room</h1>
+      <p class="subtext">Create a new room entry for booking availability.</p>
+    </div>
+
+    <div class="card-ui p-4">
+      <form method="POST" class="row g-3">
+        <div class="col-12">
+          <input class="form-control" name="room_name" placeholder="Room Name" required>
+        </div>
+        <div class="col-md-6">
+          <input class="form-control" name="capacity" placeholder="Capacity" required>
+        </div>
+        <div class="col-md-6">
+          <input class="form-control" name="type" placeholder="Type" required>
+        </div>
+        <div class="col-12">
+          <select class="form-select" name="status">
+            <option>Available</option>
+            <option>Unavailable</option>
+          </select>
+        </div>
+        <div class="col-12 d-grid">
+          <button class="btn btn-main">Add Room</button>
+        </div>
+        <div class="col-12 d-grid">
+          <a href="/admin" class="btn btn-ghost">Back to Admin Dashboard</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
