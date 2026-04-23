@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="text-center mb-5">
+
+<h1 class="heading">
+Welcome, {{ name }}
+</h1>
+
+<p class="subtext">
+Manage your bookings easily
+</p>
+
+</div>
+
+<div class="row g-4 mb-5">
+
+<div class="col-md-4">
+<a href="/rooms" style="text-decoration:none;">
+<div class="card-ui p-4 text-center">
+<h4 class="heading">View Rooms</h4>
+<p class="subtext">Browse facilities</p>
+</div>
+</a>
+</div>
+
+<div class="col-md-4">
+<a href="/mybookings" style="text-decoration:none;">
+<div class="card-ui p-4 text-center">
+<h4 class="heading">My Bookings</h4>
+<p class="subtext">Manage reservations</p>
+</div>
+</a>
+</div>
+
+<div class="col-md-4">
+<a href="/logout" style="text-decoration:none;">
+<div class="card-ui p-4 text-center">
+<h4 class="heading">Logout</h4>
+<p class="subtext">Secure sign out</p>
+</div>
+</a>
+</div>
+
+</div>
+
+{% endblock %}

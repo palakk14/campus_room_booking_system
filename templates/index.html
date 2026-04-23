@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block content %}
+<div class="text-center py-5">
+  <h1 class="display-3 heading mb-3" style="font-size: 4rem; font-weight: 900; background: linear-gradient(135deg, #d8b4fe, #93c5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+    Campus Booking
+  </h1>
+  <p class="lead subtext fs-4 mb-5" style="max-width: 600px; margin: 0 auto;">
+    Streamline your campus facility reservations with our modern booking system
+  </p>
+</div>
+
+<div class="row justify-content-center mt-5">
+<div class="col-md-8">
+<div class="card-ui p-5 text-center">
+<h2 class="heading mb-3">
+Welcome to Campus Room Booking
+</h2>
+<p class="subtext fs-5 mb-4">
+Book classrooms, seminar halls, labs and meeting rooms easily with our intuitive interface.
+</p>
+<div class="d-flex justify-content-center gap-3">
+<a href="/login" class="btn btn-main px-4">
+Login
+</a>
+<a href="/register" class="btn btn-soft px-4">
+Register
+</a>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
